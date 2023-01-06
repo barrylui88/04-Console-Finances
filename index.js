@@ -116,7 +116,7 @@ let changeTotal = changeFromLastMonthArray.reduce(
     (accumulator, currentValue) => accumulator + currentValue,0);
 // Find the mean of the changes
 let averageChange = changeTotal/changeFromLastMonthArray.length;
-// Round value to nearest dollar.
+// Round value to nearest cent.
 averageChange = Math.round(averageChange*100)/100;
 
 // // The greatest increase in profits (date and amount) over the entire period.
