@@ -126,7 +126,7 @@ let plArray = [];
 // ----------------------------
 // MY PSEUDOCODE:
 // Log the above as a string to the console.
-console.log(introductionMessage);
+// console.log(introductionMessage);
 
 // - The total number of months included in the dataset.
 // EXAMPLE: Total Months: 25
@@ -134,7 +134,7 @@ console.log(introductionMessage);
 // Find length of finances array.
 let totalMonths = finances.length;
 // Log it to the console.
-console.log(totalMonthsMessage+totalMonths);
+// console.log(totalMonthsMessage+totalMonths);
 
 // - The net total amount of Profit/Losses over the entire period.
 // EXAMPLE: Total: $2561231
@@ -148,7 +148,7 @@ for (i=0; i<finances.length; i++) {
 let plTotal = plArray.reduce(
     (accumulator, currentValue) => accumulator + currentValue,0);
 // Log it to the console.
-console.log(totalPLMessage+plTotal);
+// console.log(totalPLMessage+plTotal);
 
 // - The average of the changes in Profit/Losses over the entire period.
 // - You will need to track what the total change in profits is from month to month and then find the average.
@@ -160,7 +160,7 @@ let averageChange = plTotal/totalMonths;
 // Round value to nearest dollar.
 averageChange = Math.round(averageChange);
 // Log it to the console.
-console.log(averageChangeMessage+averageChange);
+// console.log(averageChangeMessage+averageChange);
 
 // - The greatest increase in profits (date and amount) over the entire period.
 // EXAMPLE: Greatest Increase in Profits: Feb-2012 ($1926159)
@@ -175,7 +175,7 @@ let largestValuePair = finances[largestValuePairIndex];
 // - Return the month value from the array pair.
 let largestValueMonth = largestValuePair[0];
 // Log all values to the console.
-console.log(largestIncreaseMessage+largestValueMonth+" ($"+largestValue+")");
+// console.log(largestIncreaseMessage+largestValueMonth+" ($"+largestValue+")");
 
 // - The greatest decrease in losses (date and amount) over the entire period.
 // EXAMPLE: Greatest Decrease in Profits: Sep-2013 ($-2196167)
@@ -191,4 +191,12 @@ let smallestValuePair = finances[smallestValuePairIndex];
 // - Return the month value from the array pair.
 let smallestValueMonth = smallestValuePair[0];
 // Log it to the console.
+// console.log(largestDecreaseMessage+smallestValueMonth+" ($"+smallestValue+")");
+
+// Log all outputs to the console:
+console.log(introductionMessage);
+console.log(totalMonthsMessage+totalMonths);
+console.log(totalPLMessage+plTotal);
+console.log(averageChangeMessage+averageChange);
+console.log(largestIncreaseMessage+largestValueMonth+" ($"+largestValue+")");
 console.log(largestDecreaseMessage+smallestValueMonth+" ($"+smallestValue+")");
