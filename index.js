@@ -1,3 +1,4 @@
+// DATASET (STARTER CODE)
 var finances = [
 ['Jan-2010', 867884],
 ['Feb-2010', 984655],
@@ -86,3 +87,78 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// THE TASK:
+// You have been given a dataset composed of arrays with two fields: Date and Profit/Losses.
+// Your task is to write JavaScript code that analyzes the records to calculate each of the following:
+// - The total number of months included in the dataset.
+// - The net total amount of Profit/Losses over the entire period.
+// - The average of the changes in Profit/Losses over the entire period.
+// - You will need to track what the total change in profits is from month to month and then find the average.
+// - (Total/Number of months)
+// - The greatest increase in profits (date and amount) over the entire period.
+// - The greatest decrease in losses (date and amount) over the entire period.
+// 
+// When you open your code in the browser your resulting analysis should look similar to the following:
+
+// Financial Analysis
+// ----------------------------
+// Total Months: 25
+// Total: $2561231
+// Average  Change: $-2315.12
+// Greatest Increase in Profits: Feb-2012 ($1926159)
+// Greatest Decrease in Profits: Sep-2013 ($-2196167)
+// Your final code should print the analysis to the console.
+
+// Grading Requirements:
+
+// This homework is graded based on the following criteria:
+// Satisfies all of the above acceptance criteria.
+// Application deployed at live URL.
+// Application loads with no errors.
+// Application GitHub URL submitted.
+// GitHub repository contains application code.
+// Repository has a unique name.
+// Repository follows best practices for file structure and naming conventions.
+// Repository follows best practices for variable naming conventions, indentation, quality comments, etc.
+// Repository contains multiple descriptive commit messages.
+// Repository contains quality readme with description, screenshot, link to deployed application.
+
+// You are required to submit BOTH of the following for review:
+// The URL of the deployed application.
+// The URL of the GitHub repository that contains your code. Give the repository a unique name and include a README file that describes the project.
+
+// MY PLAN (PSEUDOCODE):
+
+// EXAMPLE: Financial Analysis
+// ----------------------------
+// MY PSEUDOCODE:
+// Log the above as a string to the console.
+
+// - The total number of months included in the dataset.
+// EXAMPLE: Total Months: 25
+// MY PSEUDOCODE:
+// Find length of finances array.
+
+// - The net total amount of Profit/Losses over the entire period.
+// EXAMPLE: Total: $2561231
+// MY PSEUDOCODE:
+// Find sum of all '1th' values of the array.
+
+// - The average of the changes in Profit/Losses over the entire period.
+// - You will need to track what the total change in profits is from month to month and then find the average.
+// - (Total/Number of months)
+// EXAMPLE: Average  Change: $-2315.12
+// MY PSEUDOCODE:
+// Second value divided by first value.
+
+// - The greatest increase in profits (date and amount) over the entire period.
+// EXAMPLE: Greatest Increase in Profits: Feb-2012 ($1926159)
+// MY PSEUDOCODE:
+// Find the largest number of the '1th' values in the array and return the full array pair in the specified format.
+
+// - The greatest decrease in losses (date and amount) over the entire period.
+// EXAMPLE: Greatest Decrease in Profits: Sep-2013 ($-2196167)
+// Your final code should print the analysis to the console.
+// MY PSEUDOCODE:
+// Find the smallest number of the '1th' values in the array and return the full array pair in the specified format.
