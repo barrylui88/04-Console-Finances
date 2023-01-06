@@ -4,6 +4,13 @@
 
 This webpage contains JavaScript logic to analyse the dataset which was provided. I have written the JavaScript code to fulfil the requirements that were outlined. It has been a great opportunity for me to apply the knowledge learned over the last week to instruct the computer to perform analysis on a dataset.
 
+I've also gone slightly further to increase readibility of the console messages in two ways:
+* Adding commas for large numbers.
+    * (e.g. \$100,000,000 instead of $100000000).
+* Ensuring that negative dollar values have their '-' sign before the dollar sign.
+    * (e.g. -\$10,000 instead of \$-10,000)
+
+
 Following this task, I've enhanced my skills to utilise JavaScript and the relevant methods to perform this Financial Analysis. I look forward to using and learning more JavaScript methods to perform my complex analysis and operations.
 
 ### Useful Links
