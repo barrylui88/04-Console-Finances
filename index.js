@@ -111,7 +111,7 @@ var finances = [
 
 // MY PLAN (PSEUDOCODE):
 // - MESSAGE VARIABLES:
-let introductionMessage = "Financial Analysis\n----------------------------\n";
+let introductionMessage = "Financial Analysis\n----------------------------";
 let totalMonthsMessage = "Total Months: ";
 let totalPLMessage = "Total: $";
 let averageChangeMessage = "Average Change: $";
@@ -193,10 +193,20 @@ let smallestValueMonth = smallestValuePair[0];
 // Log it to the console.
 // console.log(largestDecreaseMessage+smallestValueMonth+" ($"+smallestValue+")");
 
-// Log all outputs to the console:
-console.log(introductionMessage);
-console.log(totalMonthsMessage+totalMonths);
-console.log(totalPLMessage+plTotal);
-console.log(averageChangeMessage+averageChange);
-console.log(largestIncreaseMessage+largestValueMonth+" ($"+largestValue+")");
-console.log(largestDecreaseMessage+smallestValueMonth+" ($"+smallestValue+")");
+// // Log all outputs to the console:
+// console.log(introductionMessage);
+// console.log(totalMonthsMessage+totalMonths);
+// console.log(totalPLMessage+plTotal);
+// console.log(averageChangeMessage+averageChange);
+// console.log(largestIncreaseMessage+largestValueMonth+" ($"+largestValue+")");
+// console.log(largestDecreaseMessage+smallestValueMonth+" ($"+smallestValue+")");
+
+// Log all outputs to the console as one line:
+console.log(
+`${introductionMessage}
+${totalMonthsMessage}${totalMonths}
+${totalPLMessage}${plTotal}
+${averageChangeMessage}${averageChange}
+${largestIncreaseMessage}${largestValueMonth} ($${largestValue})
+${largestDecreaseMessage}${smallestValueMonth} ($${smallestValue})`
+    );
