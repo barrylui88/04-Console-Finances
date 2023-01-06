@@ -137,6 +137,9 @@ let averageChangeMessage = "Average Change: $";
 let largestIncreaseMessage = "Greatest Increase in Profits: ";
 let largestDecreaseMessage = "Greatest Decrease in Profits: ";
 
+// - VALUE VARIABLES:
+let plArray = [];
+
 // EXAMPLE: 
 // Financial Analysis
 // ----------------------------
@@ -156,7 +159,15 @@ console.log(totalMonthsMessage+totalMonths);
 // EXAMPLE: Total: $2561231
 // MY PSEUDOCODE:
 // Find sum of all '1th' values of the array.
-
+// - Store all '1th' values of the array to a new array.
+for (i=0; i<finances.length; i++) {
+    plArray.push(finances[i][1]);
+}
+// - Find the sum of this array
+let sumWithInitial = plArray.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,0);
+// Log it to the console.
+console.log(totalPLMessage+sumWithInitial);
 
 // - The average of the changes in Profit/Losses over the entire period.
 // - You will need to track what the total change in profits is from month to month and then find the average.
