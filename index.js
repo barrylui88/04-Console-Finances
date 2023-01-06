@@ -129,8 +129,16 @@ var finances = [
 // The URL of the GitHub repository that contains your code. Give the repository a unique name and include a README file that describes the project.
 
 // MY PLAN (PSEUDOCODE):
+// - MESSAGE VARIABLES:
+let introductionMessage = "Financial Analysis\n----------------------------\n";
+let totalMonthsMessage = "Total Months: ";
+let totalPLMessage = "Total: $";
+let averageChangeMessage = "Average Change: $";
+let largestIncreaseMessage = "Greatest Increase in Profits: ";
+let largestDecreaseMessage = "Greatest Decrease in Profits: ";
 
-// EXAMPLE: Financial Analysis
+// EXAMPLE: 
+// Financial Analysis
 // ----------------------------
 // MY PSEUDOCODE:
 // Log the above as a string to the console.
@@ -148,7 +156,7 @@ var finances = [
 // - The average of the changes in Profit/Losses over the entire period.
 // - You will need to track what the total change in profits is from month to month and then find the average.
 // - (Total/Number of months)
-// EXAMPLE: Average  Change: $-2315.12
+// EXAMPLE: Average Change: $-2315.12
 // MY PSEUDOCODE:
 // Second value divided by first value.
 
