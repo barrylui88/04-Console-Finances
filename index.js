@@ -164,10 +164,10 @@ for (i=0; i<finances.length; i++) {
     plArray.push(finances[i][1]);
 }
 // - Find the sum of this array
-let sumWithInitial = plArray.reduce(
+let plTotal = plArray.reduce(
     (accumulator, currentValue) => accumulator + currentValue,0);
 // Log it to the console.
-console.log(totalPLMessage+sumWithInitial);
+console.log(totalPLMessage+plTotal);
 
 // - The average of the changes in Profit/Losses over the entire period.
 // - You will need to track what the total change in profits is from month to month and then find the average.
@@ -175,7 +175,11 @@ console.log(totalPLMessage+sumWithInitial);
 // EXAMPLE: Average Change: $-2315.12
 // MY PSEUDOCODE:
 // Second value divided by first value.
+let averageChange = plTotal/totalMonths;
+// Round value to nearest dollar.
+averageChange = Math.round(averageChange);
 // Log it to the console.
+console.log(averageChangeMessage+averageChange);
 
 // - The greatest increase in profits (date and amount) over the entire period.
 // EXAMPLE: Greatest Increase in Profits: Feb-2012 ($1926159)
