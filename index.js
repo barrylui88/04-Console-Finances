@@ -89,7 +89,6 @@ var finances = [
 ];
 
 // THE TASK:
-// You have been given a dataset composed of arrays with two fields: Date and Profit/Losses.
 // Your task is to write JavaScript code that analyzes the records to calculate each of the following:
 // - The total number of months included in the dataset.
 // - The net total amount of Profit/Losses over the entire period.
@@ -109,24 +108,6 @@ var finances = [
 // Greatest Increase in Profits: Feb-2012 ($1926159)
 // Greatest Decrease in Profits: Sep-2013 ($-2196167)
 // Your final code should print the analysis to the console.
-
-// Grading Requirements:
-
-// This homework is graded based on the following criteria:
-// Satisfies all of the above acceptance criteria.
-// Application deployed at live URL.
-// Application loads with no errors.
-// Application GitHub URL submitted.
-// GitHub repository contains application code.
-// Repository has a unique name.
-// Repository follows best practices for file structure and naming conventions.
-// Repository follows best practices for variable naming conventions, indentation, quality comments, etc.
-// Repository contains multiple descriptive commit messages.
-// Repository contains quality readme with description, screenshot, link to deployed application.
-
-// You are required to submit BOTH of the following for review:
-// The URL of the deployed application.
-// The URL of the GitHub repository that contains your code. Give the repository a unique name and include a README file that describes the project.
 
 // MY PLAN (PSEUDOCODE):
 // - MESSAGE VARIABLES:
@@ -185,7 +166,16 @@ console.log(averageChangeMessage+averageChange);
 // EXAMPLE: Greatest Increase in Profits: Feb-2012 ($1926159)
 // MY PSEUDOCODE:
 // Find the largest number of the '1th' values in the array and return the full array pair in the specified format.
-// Log it to the console.
+// - Find the largest number of the '1th' values in the array.
+let largestValue = Math.max(...plArray);
+// - Return the index from plArray.
+let largestValuePairIndex = plArray.indexOf(largestValue);
+// - Return the full array pair from finances.
+let largestValuePair = finances[largestValuePairIndex];
+// - Return the month value from the array pair.
+let largestValueMonth = largestValuePair[0];
+// Log all values to the console.
+console.log(largestIncreaseMessage+largestValueMonth+" ($"+largestValue+")");
 
 // - The greatest decrease in losses (date and amount) over the entire period.
 // EXAMPLE: Greatest Decrease in Profits: Sep-2013 ($-2196167)
