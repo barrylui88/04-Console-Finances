@@ -141,13 +141,33 @@ let smallestValuePair = finances[smallestValuePairIndex];
 // - Return the month value from the array pair.
 let smallestValueMonth = smallestValuePair[0];
 
+// EXTRA: Add commas to the numbers to make them more readable using toLocaleString
+let plTotalLocale = `$${plTotal.toLocaleString()}`;
+let averageChangeLocale = `$${averageChange.toLocaleString()}`;
+let largestValueLocale = `$${largestValue.toLocaleString()}`;
+let smallestValueLocale = `$${smallestValue.toLocaleString()}`;
+
+// EXTRA: For readability, find a way to make the negative sign come before the $ sign. E.g. -$1,000 instead of $-1,000.
+if (Math.sign(plTotal) < 0) {
+    plTotalLocale = `-$${(plTotal*-1).toLocaleString()}`
+}
+if (Math.sign(averageChange) < 0) {
+    averageChangeLocale = `-$${(averageChange*-1).toLocaleString()}`
+}
+if (Math.sign(largestValue) < 0) {
+    largestValueLocale = `-$${(largestValue*-1).toLocaleString()}`
+}
+if (Math.sign(smallestValue) < 0) {
+    smallestValueLocale = `-$${(smallestValue*-1).toLocaleString()}`
+}
+
 // Log all outputs to the console as one line:
 console.log(
 `Financial Analysis
 ----------------------------
 Total Months: ${totalMonths}
-Total: $${plTotal}
-Average Change: $${averageChange}
-Greatest Increase in Profits: ${largestValueMonth} ($${largestValue})
-Greatest Decrease in Profits: ${smallestValueMonth} ($${smallestValue})`
+Total: ${plTotalLocale}
+Average Change: ${averageChangeLocale}
+Greatest Increase in Profits: ${largestValueMonth} (${largestValueLocale})
+Greatest Decrease in Profits: ${smallestValueMonth} (${smallestValueLocale})`
     );
