@@ -142,16 +142,21 @@ let largestDecreaseMessage = "Greatest Decrease in Profits: ";
 // ----------------------------
 // MY PSEUDOCODE:
 // Log the above as a string to the console.
+console.log(introductionMessage);
 
 // - The total number of months included in the dataset.
 // EXAMPLE: Total Months: 25
 // MY PSEUDOCODE:
 // Find length of finances array.
+let totalMonths = finances.length;
+// Log it to the console.
+console.log(totalMonthsMessage+totalMonths);
 
 // - The net total amount of Profit/Losses over the entire period.
 // EXAMPLE: Total: $2561231
 // MY PSEUDOCODE:
 // Find sum of all '1th' values of the array.
+
 
 // - The average of the changes in Profit/Losses over the entire period.
 // - You will need to track what the total change in profits is from month to month and then find the average.
@@ -159,14 +164,17 @@ let largestDecreaseMessage = "Greatest Decrease in Profits: ";
 // EXAMPLE: Average Change: $-2315.12
 // MY PSEUDOCODE:
 // Second value divided by first value.
+// Log it to the console.
 
 // - The greatest increase in profits (date and amount) over the entire period.
 // EXAMPLE: Greatest Increase in Profits: Feb-2012 ($1926159)
 // MY PSEUDOCODE:
 // Find the largest number of the '1th' values in the array and return the full array pair in the specified format.
+// Log it to the console.
 
 // - The greatest decrease in losses (date and amount) over the entire period.
 // EXAMPLE: Greatest Decrease in Profits: Sep-2013 ($-2196167)
 // Your final code should print the analysis to the console.
 // MY PSEUDOCODE:
 // Find the smallest number of the '1th' values in the array and return the full array pair in the specified format.
+// Log it to the console.
