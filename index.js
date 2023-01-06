@@ -88,83 +88,38 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-// THE TASK:
-// Your task is to write JavaScript code that analyzes the records to calculate each of the following:
-// - The total number of months included in the dataset.
-// - The net total amount of Profit/Losses over the entire period.
-// - The average of the changes in Profit/Losses over the entire period.
-// - You will need to track what the total change in profits is from month to month and then find the average.
-// - (Total/Number of months)
-// - The greatest increase in profits (date and amount) over the entire period.
-// - The greatest decrease in losses (date and amount) over the entire period.
-// 
-// When you open your code in the browser your resulting analysis should look similar to the following:
-
-// Financial Analysis
-// ----------------------------
-// Total Months: 25
-// Total: $2561231
-// Average  Change: $-2315.12
-// Greatest Increase in Profits: Feb-2012 ($1926159)
-// Greatest Decrease in Profits: Sep-2013 ($-2196167)
-// Your final code should print the analysis to the console.
-
-// MY PLAN (PSEUDOCODE):
-// - MESSAGE VARIABLES:
-let introductionMessage = "Financial Analysis\n----------------------------";
-let totalMonthsMessage = "Total Months: ";
-let totalPLMessage = "Total: $";
-let averageChangeMessage = "Average Change: $";
-let largestIncreaseMessage = "Greatest Increase in Profits: ";
-let largestDecreaseMessage = "Greatest Decrease in Profits: ";
-
-// - VALUE VARIABLES:
-let plArray = [];
-
-// EXAMPLE: 
-// Financial Analysis
-// ----------------------------
-// MY PSEUDOCODE:
-// Log the above as a string to the console.
-// console.log(introductionMessage);
-
-// - The total number of months included in the dataset.
-// EXAMPLE: Total Months: 25
-// MY PSEUDOCODE:
+// // The total number of months included in the dataset.
 // Find length of finances array.
 let totalMonths = finances.length;
-// Log it to the console.
-// console.log(totalMonthsMessage+totalMonths);
 
-// - The net total amount of Profit/Losses over the entire period.
-// EXAMPLE: Total: $2561231
-// MY PSEUDOCODE:
+// // The net total amount of Profit/Losses over the entire period.
 // Find sum of all '1th' values of the array.
 // - Store all '1th' values of the array to a new array.
+let plArray = [];
 for (i=0; i<finances.length; i++) {
     plArray.push(finances[i][1]);
 }
 // - Find the sum of this array
 let plTotal = plArray.reduce(
     (accumulator, currentValue) => accumulator + currentValue,0);
-// Log it to the console.
-// console.log(totalPLMessage+plTotal);
 
-// - The average of the changes in Profit/Losses over the entire period.
-// - You will need to track what the total change in profits is from month to month and then find the average.
-// - (Total/Number of months)
-// EXAMPLE: Average Change: $-2315.12
-// MY PSEUDOCODE:
-// Second value divided by first value.
-let averageChange = plTotal/totalMonths;
+// // The average of the changes in Profit/Losses over the entire period.
+// // You will need to track what the total change in profits is from month to month and then find the average.
+// // (Total/Number of months)
+// Find the difference between all months [i] and the month before it [i-1] and store into a new array. Do nothing for the first month.
+let changeFromLastMonthArray = [];
+for(i=1; i<finances.length;i++){
+    changeFromLastMonthArray.push(finances[i][1]-finances[i-1][1]);
+    }
+// Find the total of all of these changes
+let changeTotal = changeFromLastMonthArray.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,0);
+// Find the mean of the changes
+let averageChange = changeTotal/changeFromLastMonthArray.length;
 // Round value to nearest dollar.
 averageChange = Math.round(averageChange);
-// Log it to the console.
-// console.log(averageChangeMessage+averageChange);
 
-// - The greatest increase in profits (date and amount) over the entire period.
-// EXAMPLE: Greatest Increase in Profits: Feb-2012 ($1926159)
-// MY PSEUDOCODE:
+// // The greatest increase in profits (date and amount) over the entire period.
 // Find the largest number of the '1th' values in the array and return the full array pair in the specified format.
 // - Find the largest number of the '1th' values in the array.
 let largestValue = Math.max(...plArray);
@@ -174,13 +129,8 @@ let largestValuePairIndex = plArray.indexOf(largestValue);
 let largestValuePair = finances[largestValuePairIndex];
 // - Return the month value from the array pair.
 let largestValueMonth = largestValuePair[0];
-// Log all values to the console.
-// console.log(largestIncreaseMessage+largestValueMonth+" ($"+largestValue+")");
 
-// - The greatest decrease in losses (date and amount) over the entire period.
-// EXAMPLE: Greatest Decrease in Profits: Sep-2013 ($-2196167)
-// Your final code should print the analysis to the console.
-// MY PSEUDOCODE:
+// // The greatest decrease in losses (date and amount) over the entire period.
 // Find the smallest number of the '1th' values in the array and return the full array pair in the specified format.
 // - Find the smallest number of the '1th' values in the array.
 let smallestValue = Math.min(...plArray);
@@ -190,23 +140,14 @@ let smallestValuePairIndex = plArray.indexOf(smallestValue);
 let smallestValuePair = finances[smallestValuePairIndex];
 // - Return the month value from the array pair.
 let smallestValueMonth = smallestValuePair[0];
-// Log it to the console.
-// console.log(largestDecreaseMessage+smallestValueMonth+" ($"+smallestValue+")");
-
-// // Log all outputs to the console:
-// console.log(introductionMessage);
-// console.log(totalMonthsMessage+totalMonths);
-// console.log(totalPLMessage+plTotal);
-// console.log(averageChangeMessage+averageChange);
-// console.log(largestIncreaseMessage+largestValueMonth+" ($"+largestValue+")");
-// console.log(largestDecreaseMessage+smallestValueMonth+" ($"+smallestValue+")");
 
 // Log all outputs to the console as one line:
 console.log(
-`${introductionMessage}
-${totalMonthsMessage}${totalMonths}
-${totalPLMessage}${plTotal}
-${averageChangeMessage}${averageChange}
-${largestIncreaseMessage}${largestValueMonth} ($${largestValue})
-${largestDecreaseMessage}${smallestValueMonth} ($${smallestValue})`
+`Financial Analysis
+----------------------------
+Total Months: ${totalMonths}
+Total: $${plTotal}
+Average Change: $${averageChange}
+Greatest Increase in Profits: ${largestValueMonth} ($${largestValue})
+Greatest Decrease in Profits: ${smallestValueMonth} ($${smallestValue})`
     );
