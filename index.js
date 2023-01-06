@@ -182,4 +182,13 @@ console.log(largestIncreaseMessage+largestValueMonth+" ($"+largestValue+")");
 // Your final code should print the analysis to the console.
 // MY PSEUDOCODE:
 // Find the smallest number of the '1th' values in the array and return the full array pair in the specified format.
+// - Find the smallest number of the '1th' values in the array.
+let smallestValue = Math.min(...plArray);
+// - Return the index from plArray.
+let smallestValuePairIndex = plArray.indexOf(smallestValue);
+// - Return the full array pair from finances.
+let smallestValuePair = finances[smallestValuePairIndex];
+// - Return the month value from the array pair.
+let smallestValueMonth = smallestValuePair[0];
 // Log it to the console.
+console.log(largestDecreaseMessage+smallestValueMonth+" ($"+smallestValue+")");
